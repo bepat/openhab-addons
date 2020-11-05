@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="mrbus"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+
+    <channel-type id="position">
+        <item-type>Rollershutter</item-type>
+        <label>Rollo Position</label>
+    </channel-type>
+    
+    <channel-type id="locked">
+        <item-type>Switch</item-type>
+        <label>Gesperrt</label>
+    </channel-type>
+    
+    <channel-type id="switch">
+        <item-type>Switch</item-type>
+        <label>An/Aus</label>
+    </channel-type>
+    
+    <channel-type id="ovenonoff">
+        <item-type>Switch</item-type>
+        <label>An/Aus</label>
+    </channel-type>
+    
+    <channel-type id="ovenpower" advanced="true">
+        <item-type>Number</item-type>
+        <label>Leistung</label>
+        <state min="2.0" max="10" step="0.5" pattern="%.1f kW" readOnly="false">
+        </state>
+    </channel-type>
+    
+    <channel-type id="readonlytemp">
+        <item-type>Number</item-type>
+        <label>Temperatur</label>
+        <state pattern="%.1f °C" readOnly="true">
+        </state>
+    </channel-type>
+
+</thing:thing-descriptions>

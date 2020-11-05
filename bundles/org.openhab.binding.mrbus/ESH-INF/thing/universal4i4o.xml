@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="mrbus"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="universal4i4o">
+        <supported-bridge-type-refs>
+            <bridge-type-ref id="mrbusip" />
+        </supported-bridge-type-refs>  
+        
+        <label>MRBus Universal 4I4O</label>
+        <description>MRBus Universal Actor, 4 inputs, 4 outputs</description>              
+
+        <channels>
+            <channel id="switch1" typeId="switch"/>
+            <channel id="switch2" typeId="switch"/>            
+            <channel id="switch3" typeId="switch"/>
+            <channel id="switch4" typeId="switch"/>
+        </channels>
+        
+        <config-description>
+            <parameter name="address" type="integer" min="1" max="254">
+                <label>Device address</label>
+                <description>
+                    MRBus Adresse (0-254)
+                </description>
+                <required>true</required>
+            </parameter>
+        </config-description>        
+    </thing-type>    
+
+</thing:thing-descriptions>

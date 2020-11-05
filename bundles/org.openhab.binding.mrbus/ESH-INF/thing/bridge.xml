@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="mrbus"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <bridge-type id="mrbusip">
+        <label>MRBus IP Gateway</label>
+        <description>MRBus IP Gateway.</description>
+
+        <properties>
+            <property name="vendor">Benedikt Patt</property>
+        </properties>
+
+        <config-description>
+            <parameter name="ipAddress" type="text">
+                <context>network_address</context>
+                <label>Gateway IP Adresse</label>
+                <description>IP address of the gateway</description>
+                <required>true</required>
+            </parameter>
+            <parameter name="interface" type="text">
+                <context>network_address</context>
+                <label>Lokale IP Adresse</label>
+                <description>IP Adresse des Interfaces auf dem OpenHAB lauscht.</description>
+                <required>true</required>
+            </parameter>
+            <parameter name="udpPort" type="integer">
+                <label>UPD Port</label>
+                <description>
+                    MRBus IP UDP Port
+                </description>
+                <default>1234</default>
+                <required>true</required>
+            </parameter>
+            <parameter name="busID" type="integer" min="0" max="255">
+                <label>Bus ID</label>
+                <description>
+                    MRBus ID for sending
+                </description>
+                <default>0</default>
+                <required>true</required>
+            </parameter>
+        </config-description>
+    </bridge-type>
+
+</thing:thing-descriptions>
